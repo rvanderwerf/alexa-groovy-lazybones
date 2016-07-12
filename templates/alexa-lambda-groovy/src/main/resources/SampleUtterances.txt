@@ -3,3 +3,5 @@ ResponseIntent {last player|Answer}
 ResponseIntent {test test|Answer}
 ResponseIntent {test test test|Answer}
 ResponseIntent {test test test test|Answer}
+HelpIntent {help}
+

@@ -28,10 +28,10 @@ public final class ${lambdaHandlerClass} extends SpeechletRequestStreamHandler {
             properties.load(stream);
 
             def property = properties.getProperty("awsApplicationId")
-            log.info("Loading app ids: ${property}")
+            log.info("Loading app ids: "+property)
             def appIds = property.split(",")
             appIds.each { appId ->
-                log.info("loading app id ${appId}")
+                log.info("loading app id "+appId)
                 supportedApplicationIds.add(appId)
             }
 
@@ -42,7 +42,7 @@ public final class ${lambdaHandlerClass} extends SpeechletRequestStreamHandler {
     }
 
 
-    public lambdaHandlerClass() {
+    public ${lambdaHandlerClass}() {
         super(new ${speechletClassName}(), supportedApplicationIds);
     }
 

@@ -151,7 +151,7 @@ public class ${speechletClassName} implements Speechlet {
         speech.setText(speechText);
         log.info("making welcome audio")
         SsmlOutputSpeech fancySpeech = new SsmlOutputSpeech()
-        fancySpeech.ssml = "<speak><audio src=\"${fileUrl}\"/> ${speechText}</speak>"
+        fancySpeech.ssml = "<speak><audio src=\""+fileUrl+"\"/> "+speechText+"</speak>"
         log.info("finished welcome audio")
         // Create reprompt
         Reprompt reprompt = new Reprompt();
