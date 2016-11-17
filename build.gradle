@@ -12,7 +12,7 @@ buildscript {
 
 apply plugin: "uk.co.cacoethes.lazybones-templates"
 group = "com.vanderfox"
-version = "0.1"
+version = "0.3"
 lazybones {
     repositoryName = "rvanderwerf/alexa-lambda-templates"
     repositoryUsername = bintrayUser

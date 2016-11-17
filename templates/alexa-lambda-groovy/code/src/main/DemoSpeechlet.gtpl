@@ -23,6 +23,7 @@ import com.amazonaws.services.dynamodbv2.document.Item
 import com.amazonaws.services.dynamodbv2.model.ScanRequest
 import com.amazonaws.services.dynamodbv2.model.ScanResult
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
+import com.amazon.speech.speechlet.Context
 
 /**
  * This app shows how to connect to hero with Spring Social, Groovy, and Alexa.
@@ -31,9 +32,38 @@ import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 @CompileStatic
 public class ${speechletClassName} implements Speechlet {
     private static final Logger log = LoggerFactory.getLogger(${speechletClassName}.class);
+
     String title = "Demo Skill"
 
+    @Override
+    SpeechletResponse onPlaybackStarted(PlaybackStartedRequest playbackStartedRequest, Context context) throws SpeechletException {
+        return null
+    }
 
+    @Override
+    SpeechletResponse onPlaybackFinished(PlaybackFinishedRequest playbackFinishedRequest, Context context) throws SpeechletException {
+        return null
+    }
+
+    @Override
+    void onPlaybackStopped(PlaybackStoppedRequest playbackStoppedRequest, Context context) throws SpeechletException {
+
+    }
+
+    @Override
+    SpeechletResponse onPlaybackNearlyFinished(PlaybackNearlyFinishedRequest playbackNearlyFinishedRequest, Context context) throws SpeechletException {
+        return null
+    }
+
+    @Override
+    SpeechletResponse onPlaybackFailed(PlaybackFailedRequest playbackFailedRequest, Context context) throws SpeechletException {
+        return null
+    }
+
+    @Override
+    void onSystemException(SystemExceptionEncounteredRequest systemExceptionEncounteredRequest) throws SpeechletException {
+
+    }
 
     @Override
     public void onSessionStarted(final SessionStartedRequest request, final Session session)
@@ -59,26 +89,25 @@ public class ${speechletClassName} implements Speechlet {
     }
 
     @Override
-    public SpeechletResponse onIntent(final IntentRequest request, final Session session)
+    public SpeechletResponse onIntent(final IntentRequest request, final Session session, Context context)
             throws SpeechletException {
         log.info("onIntent requestId={}, sessionId={}", request.getRequestId(),
                 session.getSessionId());
 
         Intent intent = request.getIntent();
         String intentName = (intent != null) ? intent.getName() : null;
-      
+
 
         switch (intentName) {
             case "ResponseIntent":
-
                   getHelpResponse()
                   break
-
             case "EndGameIntent":
                 endGame()
                 break
             case "HelpIntent":
                 getHelpResponse()
+                break
             default:
                 didNotUnderstand()
                 break
