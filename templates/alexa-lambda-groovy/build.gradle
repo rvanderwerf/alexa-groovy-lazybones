@@ -43,7 +43,7 @@ dependencies {
     // AWS Dynamodb AWS
     compile "com.amazonaws:aws-java-sdk-dynamodb:1.10.34"
     // this is the newer community supported sdk at https://github.com/vanderfox/alexa-skills-kit-java
-    compile 'com.amazon.alexa:alexa-skills-kit-java:1.1.6_SNAPSHOT'
+    compile 'com.amazon.alexa:alexa-skills-kit-java:1.1.7_SNAPSHOT'
     compile 'org.slf4j:slf4j-api:1.7.10'
     compile 'org.apache.commons:commons-lang3:3.3.2'
     compile 'org.apache.directory.studio:org.apache.commons.io:2.4'

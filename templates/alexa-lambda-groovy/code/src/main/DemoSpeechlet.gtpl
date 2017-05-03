@@ -10,6 +10,12 @@ import com.amazon.speech.speechlet.SessionStartedRequest
 import com.amazon.speech.speechlet.Speechlet
 import com.amazon.speech.speechlet.SpeechletException
 import com.amazon.speech.speechlet.SpeechletResponse
+import com.amazon.speech.speechlet.PlaybackFailedRequest
+import com.amazon.speech.speechlet.PlaybackFinishedRequest
+import com.amazon.speech.speechlet.PlaybackNearlyFinishedRequest
+import com.amazon.speech.speechlet.PlaybackStartedRequest
+import com.amazon.speech.speechlet.PlaybackStoppedRequest
+import com.amazon.speech.speechlet.SystemExceptionEncounteredRequest
 import com.amazon.speech.ui.PlainTextOutputSpeech
 import com.amazon.speech.ui.Reprompt
 import com.amazon.speech.ui.SimpleCard
